@@ -5812,10 +5812,10 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.6.tgz"
   "version" "0.0.6"
 
-"react-native-modern-login-screen@^0.1.0":
-  "integrity" "sha512-n58Ydl9yhzQKcIlGlSucoGQRmitpwRDKdItixd0O5II4QZFi6fxedjR2oGGSn9MR2p+2pRdhn40ZJhuOnKbgTA=="
-  "resolved" "https://registry.npmjs.org/react-native-modern-login-screen/-/react-native-modern-login-screen-0.1.0.tgz"
-  "version" "0.1.0"
+"react-native-modern-login-screen@^0.1.1":
+  "integrity" "sha512-EPLht1lfRtPHR/fSI1VzEND8LmyBz+HJp/Wx5uqHjIvzSF04fFTlrFXSW5/tSPdKwr5L4s6/JtpKtBNhXGeNOg=="
+  "resolved" "https://registry.npmjs.org/react-native-modern-login-screen/-/react-native-modern-login-screen-0.1.1.tgz"
+  "version" "0.1.1"
 
 "react-native@*", "react-native@0.68.2":
   "integrity" "sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw=="
