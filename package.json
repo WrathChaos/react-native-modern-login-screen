@@ -1,6 +1,6 @@
 {
   "name": "react-native-modern-login-screen",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Modern login screen with fully customizable options with ready to use components for React Native",
   "main": "./build/dist/index.js",
   "repository": "git@github.com:WrathChaos/react-native-modern-login-screen.git",
