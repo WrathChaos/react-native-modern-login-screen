@@ -3,10 +3,6 @@ import {
   View,
   Image,
   Text,
-  StyleProp,
-  TextStyle,
-  ViewStyle,
-  ImageStyle,
   TouchableOpacity,
   ImageSourcePropType,
 } from "react-native";
@@ -14,21 +10,21 @@ import {
  * ? Local Imports
  */
 import styles from "./LoginButton.style";
+import {
+  CustomImageStyleProp,
+  CustomStyleProp,
+  CustomTextStyleProp,
+} from "../../ModernLoginScreen";
 
-type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
-type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
-type CustomImageStyleProp =
-  | StyleProp<ImageStyle>
-  | Array<StyleProp<ImageStyle>>;
-
-interface LoginButtonProps {
+export interface LoginButtonProps {
+  text: string;
   style?: CustomStyleProp;
   textContainerStyle?: CustomStyleProp;
   imageStyle?: CustomImageStyleProp;
   textStyle?: CustomTextStyleProp;
   imageSource: ImageSourcePropType;
-  text: string;
-  onPress: () => void;
+  TouchableComponent?: React.ComponentType;
+  onPress?: () => void;
 }
 
 const LoginButton: React.FC<LoginButtonProps> = ({
@@ -37,11 +33,12 @@ const LoginButton: React.FC<LoginButtonProps> = ({
   textStyle,
   textContainerStyle,
   text,
+  TouchableComponent = TouchableOpacity,
   imageSource,
   onPress,
 }) => {
   return (
-    <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
+    <TouchableComponent style={[styles.container, style]} onPress={onPress}>
       <Image
         resizeMode="contain"
         source={imageSource}
@@ -50,7 +47,7 @@ const LoginButton: React.FC<LoginButtonProps> = ({
       <View style={[styles.textContainer, textContainerStyle]}>
         <Text style={[styles.textStyle, textStyle]}>{text}</Text>
       </View>
-    </TouchableOpacity>
+    </TouchableComponent>
   );
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, TouchableHighlight} from 'react-native';
-
-import ModernLoginScreen, {LoginButton, MailButton} from './lib/index';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import ModernLoginScreen, {LoginButton, MailButton} from './build/dist/index';
 
 const App = () => {
   return (
@@ -10,9 +9,6 @@ const App = () => {
         title="Welcome to Noxx"
         description="Create an account to sync all your data and access them from anywhere."
         logoSource={require('./assets/logo-example.png')}
-        onEmailPress={() => {}}
-        onFacebookPress={() => {}}
-        onGooglePress={() => {}}
       >
         <LoginButton
           text="Continue with Facebook"

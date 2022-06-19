@@ -16,20 +16,29 @@ import styles from "./ModernLoginScreen.style";
 import LoginButton from "./components/login-button/LoginButton";
 import MailButton from "./components/mail-button/MailButton";
 
-type CustomStyleProp = StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
-type CustomTextStyleProp = StyleProp<TextStyle> | Array<StyleProp<TextStyle>>;
-type CustomImageStyleProp =
+export type CustomStyleProp =
+  | StyleProp<ViewStyle>
+  | Array<StyleProp<ViewStyle>>;
+export type CustomTextStyleProp =
+  | StyleProp<TextStyle>
+  | Array<StyleProp<TextStyle>>;
+export type CustomImageStyleProp =
   | StyleProp<ImageStyle>
   | Array<StyleProp<ImageStyle>>;
 
-interface ModernLoginScreenProps {
-  style?: CustomStyleProp;
+export interface ModernLoginScreenProps {
   title: string;
   description: string;
+  logoSource: ImageSourcePropType;
+  style?: CustomStyleProp;
+  headerStyle?: CustomStyleProp;
+  logoStyle?: CustomStyleProp;
   logoImageStyle?: CustomImageStyleProp;
   titleTextStyle?: CustomTextStyleProp;
   descriptionTextStyle?: CustomTextStyleProp;
-  logoSource: ImageSourcePropType;
+  onFacebookPress?: () => void;
+  onGooglePress?: () => void;
+  onEmailPress?: () => void;
 }
 
 const ModernLoginScreen: React.FC<ModernLoginScreenProps> = ({
@@ -40,9 +49,15 @@ const ModernLoginScreen: React.FC<ModernLoginScreenProps> = ({
   titleTextStyle,
   descriptionTextStyle,
   logoImageStyle,
+  headerStyle,
+  logoStyle,
+  onFacebookPress,
+  onGooglePress,
+  onEmailPress,
+  children,
 }) => {
   const renderLogo = () => (
-    <View style={styles.logo}>
+    <View style={[styles.logo, logoStyle]}>
       <Image
         resizeMode="contain"
         source={logoSource}
@@ -52,7 +67,7 @@ const ModernLoginScreen: React.FC<ModernLoginScreenProps> = ({
   );
 
   const renderHeader = () => (
-    <View style={styles.header}>
+    <View style={[styles.header, headerStyle]}>
       <Text style={[styles.titleText, titleTextStyle]}>{title}</Text>
       <Text style={[styles.descriptionText, descriptionTextStyle]}>
         {description}
@@ -60,33 +75,35 @@ const ModernLoginScreen: React.FC<ModernLoginScreenProps> = ({
     </View>
   );
 
-  const renderLoginButtons = () => (
-    <View style={styles.loginButtons}>
+  const DefaultSocialLoginButtons = () => (
+    <>
       <LoginButton
         text="Continue with Facebook"
         imageSource={require("./local-assets/facebook.png")}
-        onPress={() => {}}
+        onPress={onFacebookPress}
       />
       <LoginButton
         text="Continue with Google"
         imageSource={require("./local-assets/google.png")}
         style={styles.loginButtonStyle}
-        onPress={() => {}}
+        onPress={onGooglePress}
       />
       <MailButton
         text="Continue with Email"
         imageSource={require("./local-assets/email.png")}
         style={styles.loginButtonStyle}
-        onPress={() => {}}
+        onPress={onEmailPress}
       />
-    </View>
+    </>
   );
 
   return (
     <View style={[styles.container, style]}>
       {renderLogo()}
       {renderHeader()}
-      {renderLoginButtons()}
+      <View style={styles.loginButtons}>
+        {children || <DefaultSocialLoginButtons />}
+      </View>
     </View>
   );
 };
