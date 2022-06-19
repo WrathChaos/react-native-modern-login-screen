@@ -1,6 +1,9 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
-import ModernLoginScreen, {LoginButton, MailButton} from './build/dist/index';
+import ModernLoginScreen, {
+  LoginButton,
+  MailButton,
+} from 'react-native-modern-login-screen';
 
 const App = () => {
   return (
