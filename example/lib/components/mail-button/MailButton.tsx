@@ -21,12 +21,13 @@ type CustomImageStyleProp =
   | StyleProp<ImageStyle>
   | Array<StyleProp<ImageStyle>>;
 
-interface MailButtonProps {
+export interface MailButtonProps {
   style?: CustomStyleProp;
   textContainerStyle?: CustomStyleProp;
   imageStyle?: CustomImageStyleProp;
   textStyle?: CustomTextStyleProp;
   imageSource: ImageSourcePropType;
+  TouchableComponent?: React.ComponentType;
   text: string;
   onPress: () => void;
 }
@@ -37,11 +38,12 @@ const MailButton: React.FC<MailButtonProps> = ({
   textStyle,
   textContainerStyle,
   text,
+  TouchableComponent = TouchableOpacity,
   imageSource,
   onPress,
 }) => {
   return (
-    <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
+    <TouchableComponent style={[styles.container, style]} onPress={onPress}>
       <Image
         resizeMode="contain"
         source={imageSource}
@@ -50,7 +52,7 @@ const MailButton: React.FC<MailButtonProps> = ({
       <View style={[styles.textContainer, textContainerStyle]}>
         <Text style={[styles.textStyle, textStyle]}>{text}</Text>
       </View>
-    </TouchableOpacity>
+    </TouchableComponent>
   );
 };
 

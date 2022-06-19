@@ -1,7 +1,7 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, TouchableHighlight} from 'react-native';
 
-import ModernLoginScreen from './lib/ModernLoginScreen';
+import ModernLoginScreen, {LoginButton, MailButton} from './lib/index';
 
 const App = () => {
   return (
@@ -10,7 +10,28 @@ const App = () => {
         title="Welcome to Noxx"
         description="Create an account to sync all your data and access them from anywhere."
         logoSource={require('./assets/logo-example.png')}
-      />
+        onEmailPress={() => {}}
+        onFacebookPress={() => {}}
+        onGooglePress={() => {}}
+      >
+        <LoginButton
+          text="Continue with Facebook"
+          imageSource={require('./assets/facebook.png')}
+          onPress={() => {}}
+        />
+        <LoginButton
+          text="Continue with Google"
+          imageSource={require('./assets/google.png')}
+          style={{marginTop: 16}}
+          onPress={() => {}}
+        />
+        <MailButton
+          text="Continue with Email"
+          imageSource={require('./assets/email.png')}
+          style={{marginTop: 16}}
+          onPress={() => {}}
+        />
+      </ModernLoginScreen>
     </SafeAreaView>
   );
 };
