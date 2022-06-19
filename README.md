@@ -1,7 +1,7 @@
 <img alt="React Native Modern Login Screen" src="assets/logo.png" width="1050"/>
 
 
-[![React Native Modern Login Screen](https://img.shields.io/badge/-Extremely%20easy%20to%20create%20a%20React%20Native%20Component%20Library%20with%20both%20Stateful%20and%20Functional%20Component%20Examples-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-modern-login-screen)
+[![React Native Modern Login Screen](https://img.shields.io/badge/-Modern%20login%20screen%20with%20fully%20customizable%20options%20with%20ready%20to%20use%20components%20for%20React%20Native-orange?style=for-the-badge)](https://github.com/WrathChaos/react-native-modern-login-screen)
 
 [![npm version](https://img.shields.io/npm/v/react-native-modern-login-screen.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-modern-login-screen)
 [![npm](https://img.shields.io/npm/dt/react-native-modern-login-screen.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-modern-login-screen)
@@ -11,7 +11,7 @@
 
 <p align="center">
   <img alt="React Native Modern Login Screen"
-        src="assets/Screenshots/typescript.jpg" />
+        src="assets/Screenshots/react-native-modern-login-screen.png" />
 </p>
 
 # Installation
